@@ -1,7 +1,4 @@
-package com.ServeSync.backend.Services;
-
-import com.ServeSync.backend.Entity.RegistersEntity;
-import com.ServeSync.backend.Repository.RegisterRepository;
+package com.ServeSync.backend.Subs;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

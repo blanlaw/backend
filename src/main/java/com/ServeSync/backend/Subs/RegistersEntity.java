@@ -1,5 +1,7 @@
-package com.ServeSync.backend.Entity;
+package com.ServeSync.backend.Subs;
 
+import com.ServeSync.backend.Product.ProjectEntity;
+import com.ServeSync.backend.User.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

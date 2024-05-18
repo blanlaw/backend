@@ -1,7 +1,4 @@
-package com.ServeSync.backend.Services;
-
-import com.ServeSync.backend.Entity.UserEntity;
-import com.ServeSync.backend.Repository.UserRepository;
+package com.ServeSync.backend.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

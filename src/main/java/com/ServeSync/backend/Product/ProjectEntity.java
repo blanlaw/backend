@@ -1,4 +1,4 @@
-package com.ServeSync.backend.Entity;
+package com.ServeSync.backend.Product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,7 +23,7 @@ public class ProjectEntity {
         private String description;
 
         @OneToMany(mappedBy = "idproj", cascade = CascadeType.ALL, orphanRemoval = true)
-        private Set<RegistersEntity> RegistersEntity ;
+        private Set<com.ServeSync.backend.Subs.RegistersEntity> RegistersEntity ;
 
 
 

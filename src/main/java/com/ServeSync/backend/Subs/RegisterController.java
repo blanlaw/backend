@@ -1,9 +1,5 @@
-package com.ServeSync.backend.Controller;
+package com.ServeSync.backend.Subs;
 
-import com.ServeSync.backend.Entity.RegistersEntity;
-import com.ServeSync.backend.Entity.UserEntity;
-import com.ServeSync.backend.Services.RegisterServices;
-import com.ServeSync.backend.Services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +20,9 @@ public class RegisterController {
 
 
         registerServices.saveregister(registers);
+
+
+
     }
 
 

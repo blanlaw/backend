@@ -1,6 +1,5 @@
-package com.ServeSync.backend.Repository;
+package com.ServeSync.backend.Subs;
 
-import com.ServeSync.backend.Entity.RegistersEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
