@@ -1,4 +1,4 @@
-package com.ServeSync.backend.User;
+package com.ServeSync.backend.User.Controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

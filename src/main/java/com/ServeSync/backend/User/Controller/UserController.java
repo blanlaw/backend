@@ -1,5 +1,7 @@
-package com.ServeSync.backend.User;
+package com.ServeSync.backend.User.Controller;
 
+import com.ServeSync.backend.User.UserEntity;
+import com.ServeSync.backend.User.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +13,7 @@ import java.util.Optional;
 public class UserController {
 
     @Autowired
-    private UserServices  userServices;
+    private UserServices userServices;
     @GetMapping("/list")
     public List<UserEntity> list(){
 
