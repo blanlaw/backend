@@ -11,16 +11,17 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 
-@Entity
+@Entity(name = "user")
 @Data
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-@Table(name = "user")
+
 public class UserEntity implements UserDetails {
 
    @Id
@@ -32,12 +33,14 @@ public class UserEntity implements UserDetails {
    private String lastname;
    @Column(name = "year_user")
    private int years;
-   @Column(name = "email")
+   @Column(name = "email", unique = true)
    private String email;
+   @Column(name = "password")
+   private String password;
    @Column(name = "cellphone")
    private int cellphone;
-   @OneToMany(mappedBy = "iduser")
-   private Set<RegistersEntity> registersEntities;
+   @OneToMany(mappedBy = "iduser", cascade = CascadeType.ALL, orphanRemoval = true)
+   private Set<RegistersEntity> registersEntities = new HashSet<>();
    @Enumerated(EnumType.STRING)
    private Rol rol;
 
@@ -57,23 +60,24 @@ public class UserEntity implements UserDetails {
       return "";
    }
 
+
    @Override
    public boolean isAccountNonExpired() {
-      return false;
+      return true;
    }
 
    @Override
    public boolean isAccountNonLocked() {
-      return false;
+      return true;
    }
 
    @Override
    public boolean isCredentialsNonExpired() {
-      return false;
+      return true;
    }
 
    @Override
    public boolean isEnabled() {
-      return false;
+      return true;
    }
 }

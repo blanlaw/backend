@@ -1,5 +1,6 @@
 package com.ServeSync.backend.User.Controller;
 
+import com.ServeSync.backend.Auth.dto.UserResponse;
 import com.ServeSync.backend.User.UserEntity;
 import com.ServeSync.backend.User.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class UserController {
     @Autowired
     private UserServices userServices;
     @GetMapping("/list")
-    public List<UserEntity> list(){
+    public List<UserResponse> list(){
 
         return userServices.obtenerUsuarios();
     }

@@ -1,4 +1,4 @@
-package com.ServeSync.backend.User.Auth;
+package com.ServeSync.backend.Auth;
 
 import com.ServeSync.backend.Subs.RegistersEntity;
 import com.ServeSync.backend.User.Rol;
@@ -26,7 +26,8 @@ public class RegisterRequest {
     private int years;
 
     private String email;
+    private String password;
 
     private int cellphone;
-
+/* retornar valores del dto*/
 }

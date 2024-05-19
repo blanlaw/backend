@@ -1,5 +1,6 @@
 package com.ServeSync.backend.User;
 
+import com.ServeSync.backend.Auth.dto.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,8 +16,17 @@ public class UserServices  {
     @Autowired
     UserRepository userRepository;
 
-    public List<UserEntity> obtenerUsuarios() {
-        return userRepository.findAll();
+    public List<UserResponse> obtenerUsuarios() {
+        return userRepository.findAll().stream().map(a -> {
+            UserResponse userResponse = new UserResponse();                         /*le paso los datos por el dto */
+            userResponse.setName(a.getName());
+            userResponse.setLastname(a.getLastname());
+            userResponse.setYears(a.getYears());
+            userResponse.setEmail(a.getEmail());
+            userResponse.setPassword(a.getPassword());
+            userResponse.setCellphone(a.getCellphone());
+            return userResponse;
+        }).toList();
     }
 
     public Optional<UserEntity> listbyid(int id) {

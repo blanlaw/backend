@@ -1,25 +1,24 @@
-package com.ServeSync.backend.User.Auth;
+package com.ServeSync.backend.Auth;
 
 import com.ServeSync.backend.Jwt.JwtAuth;
 import com.ServeSync.backend.Jwt.JwtService;
+import com.ServeSync.backend.User.Rol;
 import com.ServeSync.backend.User.UserEntity;
 import com.ServeSync.backend.User.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-
+@RequiredArgsConstructor
 public class AuthService {
 
 
     private final UserRepository userRepository;
     private final JwtAuth jwtAuth;
     private final JwtService jwtService;
+    private final PasswordEncoder passwordEconder;
 
-    public AuthService(UserRepository userRepository, JwtAuth jwtAuth, JwtService jwtService) {
-        this.userRepository = userRepository;
-        this.jwtAuth = jwtAuth;
-        this.jwtService = jwtService;
-    }
 
     public AuthResponse login(LoginRequest loginRequest){
 
@@ -34,7 +33,9 @@ public class AuthService {
                 .lastname(registerRequest.getLastname())
                 .years(registerRequest.getYears())
                 .email(registerRequest.getEmail())
+                .password(passwordEconder.encode(registerRequest.getPassword()))
                 .cellphone(registerRequest.getCellphone())
+                .rol(Rol.USER)
                 .build();
 
         userRepository.save(userEntity);

@@ -1,4 +1,4 @@
-package com.ServeSync.backend.User.Auth;
+package com.ServeSync.backend.Auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
