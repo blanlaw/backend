@@ -33,7 +33,7 @@ public class SecurityConfig {
                     .csrf(csrf ->csrf.disable())            /* este es el token csrf pero no lo estoy usando aun   */
                     .authorizeHttpRequests(authRequest ->
                             authRequest
-                                    .requestMatchers("/auth/**").permitAll()    /* llega todas las rutas de /auth*/
+                                    .requestMatchers("/auth/**").permitAll()    /*rutas*/
                                     .anyRequest().authenticated()
 
                     )
