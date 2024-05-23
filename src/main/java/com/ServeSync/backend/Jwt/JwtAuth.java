@@ -35,9 +35,9 @@ public class JwtAuth   extends OncePerRequestFilter {
 
         final String authHeader=request.getHeader(HttpHeaders.AUTHORIZATION);
 
-        if(StringUtils.hasText(authHeader) && authHeader.startsWith("Bearer") ){        /*busca en la ruta la palabra bearer y los inicia con la misma */
+        if(StringUtils.hasText(authHeader) && authHeader.startsWith("Bearer") ){        /*ruta bearer/
 
-            return authHeader.substring(7);                      /*se extrae y retorna el token - tambien le digo que apartir del caracter 7 es el token*/
+            return authHeader.substring(7);                      /*rturn tk*/
 
         }
 
